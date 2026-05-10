@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Injection | Mokgadi</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+  <header>
+    <a class="back" href="index.html">← Back to Writeups</a>
+    <h1>SQL Injection</h1>
+    <p class="role">Week 8 · Database Security</p>
+    <div class="divider"></div>
+  </header>
+
+  <main>
+
+    <div class="writeup-body">
+
+      <div class="writeup-section">
+        <h2>What is it?</h2>
+        <p>SQL Injection happens when an attacker inserts malicious SQL code into an input field. The database then executes that code as if it were a legitimate query, giving the attacker access to data they shouldn't have.</p>
+      </div>
+
+      <div class="writeup-section">
+        <h2>How does it work?</h2>
+        <p>Imagine a login form that runs this query behind the scenes:</p>
+        <div class="code-block">SELECT * FROM users WHERE username='input' AND password='input'</div>
+        <p>If an attacker types <strong>' OR '1'='1</strong> as the username, the query becomes:</p>
+        <div class="code-block">SELECT * FROM users WHERE username='' OR '1'='1' AND password=''</div>
+        <p>Since '1'='1' is always true, the attacker bypasses the login completely.</p>
+      </div>
+
+      <div class="writeup-section">
+        <h2>What I practiced</h2>
+        <p>In the TryHackMe room I practiced extracting database tables, usernames and passwords using injected queries. I also used UNION attacks to retrieve data from other tables in the database.</p>
+      </div>
+
+      <div class="writeup-section">
+        <h2>How to prevent it</h2>
+        <p>Always use <strong>parameterised queries</strong> which treat user input as data, never as code. Also validate and sanitise all input and use least privilege database accounts.</p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <footer>
+    <a href="https://github.com/Mokgadi-Malemahlolo" target="_blank">github.com/Mokgadi-Malemahlolo</a>
+  </footer>
+
+</body>
+</html>
