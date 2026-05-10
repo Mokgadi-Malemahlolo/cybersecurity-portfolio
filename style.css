@@ -201,3 +201,19 @@ footer a {
   color: #c49aa4;
   text-decoration: none;
 }
+
+/* ══════════════════════════════════════
+   BACK BUTTON
+══════════════════════════════════════ */
+.back {
+  display: inline-block;
+  margin-bottom: 1.5rem;
+  font-size: 13px;
+  color: #c49aa4;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.back:hover {
+  text-decoration: underline;
+}
